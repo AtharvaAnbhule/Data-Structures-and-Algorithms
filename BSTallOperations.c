@@ -1,14 +1,13 @@
-// C program to implement binary search tree
+
 #include <stdio.h>
 #include <stdlib.h>
 
-// Define a structure for a binary tree node
 struct BinaryTreeNode {
 	int key;
 	struct BinaryTreeNode *left, *right;
 };
 
-// Function to create a new node with a given value
+
 struct BinaryTreeNode* newNodeCreate(int value)
 {
 	struct BinaryTreeNode* temp
@@ -134,10 +133,9 @@ struct BinaryTreeNode* delete (struct BinaryTreeNode* root,
 
 int main()
 {
-	// Initialize the root node
 	struct BinaryTreeNode* root = NULL;
 
-	// Insert nodes into the binary search tree
+
 	root = insertNode(root, 50);
 	insertNode(root, 30);
 	insertNode(root, 20);
@@ -146,7 +144,7 @@ int main()
 	insertNode(root, 60);
 	insertNode(root, 80);
 
-	// Search for a node with key 60
+	
 	if (searchNode(root, 60) != NULL) {
 		printf("60 found");
 	}
@@ -156,25 +154,22 @@ int main()
 
 	printf("\n");
 
-	// Perform post-order traversal
+
 	postOrder(root);
 	printf("\n");
 
-	// Perform pre-order traversal
+
 	preOrder(root);
 	printf("\n");
 
-	// Perform in-order traversal
 	inOrder(root);
 	printf("\n");
 
-	// Perform delete the node (70)
+
 	struct BinaryTreeNode* temp = delete (root, 70);
 	printf("After Delete: \n");
 	inOrder(root);
 
-	// Free allocated memory (not done in this code, but
-	// good practice in real applications)
 
 	return 0;
 }
